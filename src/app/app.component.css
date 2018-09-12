@@ -1,0 +1,259 @@
+:root {
+  --brand-color: #44a19f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--brand-color);
+}
+
+html {
+  font-size: 100%;
+  overflow-x: hidden;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+@font-face {
+  src: url("../fonts/Gotham-Rounded-Book.ttf");
+  font-family: 'Gotham-Rounded-Book', sans-serif;
+}
+
+@font-face {
+  src: url("../fonts/Gotham-Rounded-Light.ttf");
+  font-family: 'Gotham-Rounded-Light', sans-serif;
+}
+
+@font-face {
+  src: url("../fonts/Gotham-Rounded-Medium.ttf");
+  font-family: 'Gotham-Rounded-Medium', sans-serif;
+}
+
+h1, h2, h3, h4, h5, {
+  font-weight: normal;
+}
+
+body {
+  font-family: 'Gotham-Rounded-Light', sans-serif;
+  line-height: 1.6em;
+  color: #565a5c;
+  overflow-x: hidden;
+  font-size: 1em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/*=======================================
+Find artist section
+=========================================*/
+
+.find-artist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.search-btn-container {
+  position: relative;
+  text-align: center;
+  padding: 2em;
+}
+
+.search-btn-container img {
+  position: absolute;
+  left: -35px;
+  top: 30px;
+  width: 59px;
+}
+
+.find-artist h1 {
+  font-size: 2.5em;
+  font-weight: normal;
+  line-height: 1em;
+}
+
+.search-artist-btn {
+  width: 250px;
+  max-width: 100%;
+  min-width: 100px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 1.3em;
+  border: none;
+  background-color: #44a19f;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 5px;
+  box-shadow: 1px 3px 0px #397372;
+  margin: 1.5em auto;
+}
+
+.search-artist-btn:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .find-artist h1 {
+    font-size: 1.6em;
+    font-weight: normal;
+    line-height: 1em;
+  }
+  .search-artist-btn {
+    width: 200px;
+    max-width: 100%;
+    min-width: 100px;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+/*=======================================
+Enter search
+=========================================*/
+
+.enter-search {
+  background-color: #333;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enter-card {
+  background-color: #fff;
+  padding: 2em 1em;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 500px;
+  max-width: 100%;
+  margin: 1em;
+}
+
+.enter-card h3 {
+  margin-bottom: 1.3em;
+  font-weight: normal;
+  font-size: 1.4em;
+}
+
+.input-group {
+  display: flex;
+  margin: 1em 0;
+}
+
+.input-group span {
+  width: 10em;
+  padding: .5em;
+}
+
+.input-group input {
+  padding: 1em;
+  width: 100%;
+  background-color: #f5f5f5;
+  border: 1px solid #eee;
+  box-shadow: 1px 2px 0px #eee;
+  box-sizing: border-box;
+  font-size: 1em
+}
+
+.input-group .search-artist-btn {
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  font-size: 1em;
+  margin-left: -40px;
+}
+
+::placeholder {
+  color: #565a5c;
+}
+
+.input-group select {
+  width: 100%;
+  -webkit-appearance: none;
+  border-radius: 0;
+  border: 1px solid #eee;
+  padding: 1em;
+  font-size: 1em;
+  box-shadow: 1px 2px 0px #eee;
+  color: #565a5c;
+  box-sizing: border-box;
+}
+
+/*=======================================
+Search Result
+=========================================*/
+
+.search-result {
+  padding: 5em 0;
+}
+
+.search-result h1 {
+  margin: 2em 0;
+}
+
+.result-block {
+  display: flex;
+  margin: 3em 1em;
+  text-decoration: none;
+  color: #565a5c;
+}
+
+.result-block:hover {
+  text-decoration: none;
+}
+
+.result-block .img-block img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #999;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 3em;
+}
+
+.result-block .result-text {
+  border-bottom: 1px solid #999;
+}
+
+.result-block .result-text p {
+  /* margin: .5em 0; */
+}
+
+@media screen and (max-width: 768px) {
+  .search-result {
+    padding: 5em 1em;
+  }
+  .result-block .img-block img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #999;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1em;
+  }
+  .result-block {
+    display: flex;
+    margin: 1em;
+    text-decoration: none;
+    color: #565a5c;
+    height: 153px;
+    overflow: hidden;
+  }
+}

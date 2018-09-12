@@ -1,3 +1,89 @@
-<h1>
-  {{title}}
-</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JG Frontend</title>
+</head>
+
+<body>
+
+
+
+  <section class="find-artist"  *ngIf="step1">
+    <div class="wrapper">
+      <div class="search-btn-container">
+        <img src="assets/images/arrow.png" alt="">
+        <h1>Find Your artist Below</h1>
+        <button class="search-artist-btn " (click)=searchartist()>Search Artist</button>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="enter-search"  *ngIf="step2">
+    <div class="wrapper">
+      <div class="enter-card">
+        <h3>Enter Search Criteria</h3>
+        <div class="input-group">
+          <span>Artist Name</span>
+          <input [(ngModel)]="name" type="text" placeholder="Enter here">
+        </div>
+        <p *ngIf="invalidName">* Invalid name</p>
+
+
+        <div class="input-group">
+          <span>No of tracks</span>
+          <select [(ngModel)]="limit" class="" >
+            <option value="">Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+        <p *ngIf="invalidLimit">* Invalid limit</p>
+
+
+        <div class="input-group">
+          <span></span>
+          <button (click)="submitdata()" class="search-artist-btn">Search Artist</button>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="search-result" *ngIf="step3">
+    <div class="wrapper">
+      <h1>Search results for <span>'Jack'.</span>
+        <a (click)="backtostep1()" style="font-size: .8em;">( Clear )</a>
+      </h1>
+
+      <a *ngFor="let result of mySearchResults" href="#" class="result-block">
+        <div class="img-block">
+          <img src="{{result.artworkUrl60}}" alt="">
+        </div>
+
+        <div class="result-text">
+          <p><strong>Artist Name: <span class="">{{result.artistName}}</span></strong></p>
+          <p><strong>Track Name: <span class="">Jack</span></strong></p>
+          <p>{{result.description ? result.description: result.longDescription}}</p>
+
+      </div>
+    </a>
+    </div>
+  </section>
+
+
+
+
+</body>
+
+</html>
